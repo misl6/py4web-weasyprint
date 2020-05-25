@@ -13,9 +13,9 @@ class WeasyTemplate(Fixture):
         self.path = path
         self.delimiters = delimiters
 
-    def transform(self, output):
+    def transform(self, output, shared_data=None):
         output = Template(self.filename, self.path,
-                          self.delimiters).transform(output)
+                          self.delimiters).transform(output, shared_data)
         html = weasyprint.HTML(
             string=output,
             url_fetcher=py4web_url_fetcher,
