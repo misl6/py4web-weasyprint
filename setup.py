@@ -1,19 +1,19 @@
 from setuptools import setup
 
-VERSION = '0.1.0'
+VERSION = "20200530.1"
 
 setup(
-    name='py4web-weasyprint',
+    name="py4web-weasyprint",
     version=VERSION,
-    url='https://github.com/misl6/py4web-weasyprint',
+    url="https://github.com/misl6/py4web-weasyprint",
     license="BSD",
-    author='Mirko Galimberti',
-    author_email='me@mirkogalimberti.com',
-    description='WeasyPrint component for py4web',
+    author="Mirko Galimberti",
+    author_email="me@mirkogalimberti.com",
+    maintainer="Mirko Galimberti",
+    maintainer_email="me@mirkogalimberti.com",
+    description="WeasyPrint plugin for py4web, easely create PDF files via py4web",
     packages=["py4web_weasy"],
-    install_requires=[
-        "weasyprint"
-    ],
+    install_requires=["weasyprint"],
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Web Environment",
@@ -29,5 +29,5 @@ setup(
         "Topic :: Database :: Front-Ends",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    python_requires='>=3.6',
+    python_requires=">=3.6",
 )
