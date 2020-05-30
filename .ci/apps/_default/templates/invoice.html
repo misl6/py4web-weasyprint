@@ -1,0 +1,57 @@
+<!-- ADAPTED FROM THE WEASYPRINT EXAMPLE -->
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link href="[[ =URL('static/css/invoice.css') ]]" media="print" rel="stylesheet">
+  <title>Invoice</title>
+</head>
+
+<body>
+  <h1>Invoice</h1>
+
+  <aside>
+    <address id="from">
+      [[ =address_from['company'] ]]
+      [[ =address_from['street'] ]]
+      [[ =address_from['zip'] ]] [[ =address_from['city'] ]]
+      [[ =address_from['planet'] ]]
+    </address>
+
+    <address id="to">
+      [[ =address_to['company'] ]]
+      [[ =address_to['street'] ]]
+      [[ =address_to['zip'] ]] [[ =address_from['city'] ]]
+      [[ =address_to['planet'] ]]
+    </address>
+  </aside>
+
+  <dl id="informations">
+    <dt>Invoice number</dt>
+    <dd>[[ =invoice_no ]]</dd>
+    <dt>Date</dt>
+    <dd>[[ =date ]]</dd>
+  </dl>
+
+  <table>
+    <thead>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </thead>
+    <tbody>
+      [[ for product in products: ]]
+      <tr>
+        <td>[[ =product['description'] ]]</td>
+        <td>Mars$ [[ ="{0:.2f}".format(product['price']) ]]</td>
+        <td>[[ =product['qty'] ]]</td>
+        <td>Mars$ [[ ="{0:.2f}".format(product['price']*product['qty']) ]]</td>
+      </tr>
+      [[ pass ]]
+    </tbody>
+  </table>
+</body>
+
+</html>
